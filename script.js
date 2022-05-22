@@ -1,6 +1,6 @@
 const FRAME_NUM = 17;
 const PUNCH_AUDIO = new Audio('punch.mp3');
-const PUNCH_FRAMES = [4, 8, 12, 16].reduce((o, v) => ({...o, [v]: new Audio('punch.mp3')}), {});
+const PUNCH_FRAMES = [4, 8, 12, 16].reduce((o, v) => ({...o, [v]: new Audio('punch_x2.mp3')}), {});
 const BG_AUDIO = new Audio('bg.mp3');
 
 var currentFrame = 0;
