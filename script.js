@@ -49,6 +49,7 @@ function init() {
     var img = document.createElement("img");
     img.src = getFileName(i);
     img.id = String(i);
+    img.ondragstart = () => false;
     if (i > 0) img.classList.add("hidden");
     main.appendChild(img);
   }
