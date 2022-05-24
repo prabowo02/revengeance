@@ -27,6 +27,7 @@ function advance() {
   if (!allowAdvance) return;
   startBgm();
   nextFrame();
+  allowAdvance = false;
   setTimeout(() => {
     nextFrame();
     allowAdvance = true;
@@ -36,7 +37,7 @@ function advance() {
 var startedBgm = false;
 function startBgm() {
   if (!startedBgm) {
-    BG_AUDIO.volume = 0.5;
+    BG_AUDIO.volume = 0.8;
     BG_AUDIO.loop = true;
     BG_AUDIO.play();
     startedBgm = true;
@@ -46,8 +47,9 @@ function startBgm() {
 function init() {
   var main = document.getElementById("main");
   for (let i = 0; i < FRAME_NUM; ++i) {
-    var img = document.createElement("img");
-    img.src = getFileName(i);
+    var img = document.createElement("div");
+    img.classList.add("image");
+    img.style.backgroundImage = "url('" + getFileName(i) + "')";
     img.id = String(i);
     img.ondragstart = () => false;
     if (i > 0) img.classList.add("hidden");
